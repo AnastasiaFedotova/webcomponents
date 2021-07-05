@@ -1,3 +1,8 @@
-<div>
-  <p>{{person?.firstname}}</p>
-</div>
+<form *ngIf="person" [formGroup]="personForm" (submit)="updatePersonData()">
+  <input formControlName="firstname" placeholder={{person.firstname}} required name="firstname">
+  <input formControlName="lastname" placeholder={{person.lastname}} required name="lastname">
+  <input formControlName="age" placeholder={{person.age}} required name="age">
+  <button type="submit">
+    save
+  </button>
+</form>
