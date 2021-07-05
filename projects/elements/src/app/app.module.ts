@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
-import { ComponentsModule, ComponentsComponent, CityComponent } from 'components';
+import { CityModule, CityComponent, PopulationModule, PopulationComponent, PersonModule, PersonComponent } from 'components';
 
 @NgModule({
   imports: [
     BrowserModule,
-    ComponentsModule
+    CityModule,
+    PopulationModule,
+    PersonModule
   ],
   providers: []
 })
@@ -15,10 +17,13 @@ export class AppModule {
   constructor(private injector: Injector){}
 
   ngDoBootstrap(){
-    const element = createCustomElement(ComponentsComponent, { injector: this.injector })
-    customElements.define("main-components", element);
-
     const city = createCustomElement(CityComponent, { injector: this.injector })
-    customElements.define("city-components", city);
+    customElements.define("city-component", city);
+
+    const population = createCustomElement(PopulationComponent, { injector: this.injector })
+    customElements.define("population-component", population);
+
+    const person = createCustomElement(PersonComponent, { injector: this.injector })
+    customElements.define("person-component", person);
   }
 }

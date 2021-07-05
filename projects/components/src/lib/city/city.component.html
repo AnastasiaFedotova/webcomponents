@@ -1,8 +1,6 @@
-<h1>Города:</h1>
-<ul>
+<div>
+ <h1>Города:</h1>
   <ul>
     <li *ngFor="let city of cities" (click)="openPopulationList(city.id)">{{city.name}}</li>
   </ul>
-
-  <population-component *ngIf="population" [population]="population"></population-component>
-</ul>
+</div>

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { PopulationComponent } from '../population/population.component';
 import { CityComponent } from './city.component';
 
 
 
 @NgModule({
   declarations: [
-    CityComponent,
-    PopulationComponent
+    CityComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule
   ],
   exports: [

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import Person from './../interfaces/persone';
+import Person from '../interfaces/persone';
 
 @Component({
   selector: 'person-component',
@@ -9,17 +8,10 @@ import Person from './../interfaces/persone';
   ]
 })
 export class PersonComponent implements OnInit {
-  @Input() preson: Person | undefined;
-  personForm = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    age: new FormControl('', [Validators.required]),
-  });
+  @Input() person: Person | undefined;
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onSubmit() {
+    console.log(this.person);
   }
 }

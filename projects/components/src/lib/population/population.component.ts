@@ -9,14 +9,14 @@ import Person from '../interfaces/persone';
 })
 export class PopulationComponent implements OnInit {
   @Input() population: Person[] | undefined;
-  isOpen = false;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.population)
+    console.log(this.population);
   }
 
-  openPersonData() {
-    this.isOpen = true;
+  openPersonData(id: number): void {
+    const person = this.population?.find(elem => elem.id === id);
+    console.log(person);
   }
 }
