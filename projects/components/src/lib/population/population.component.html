@@ -3,4 +3,5 @@
   <ul>
     <li *ngFor="let person of population" (click)="openPersonData()">{{person.firstname}} {{person.lastname}}</li>
   </ul>
+  <person-component *ngIf="isOpen"></person-component>
 </ul>

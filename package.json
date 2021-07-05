@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:elements": "ng build --prod --project elements --output-hashing none && npm run pack:elements && cp projects/elements/package.json dist/elements",
-    "pack:elements": "cat ./dist/elements/{runtime,polyfills,main}-es5.js > dist/elements/elements.js && ls -lah dist/elements/elements.js",
+    "pack:elements": "cat ./dist/elements/{runtime,polyfills,main}.js > dist/elements/elements.js && ls -lah dist/elements/elements.js",
     "build:components": "ng build --prod --project components"
   },
   "private": true,
@@ -23,7 +23,9 @@
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
     "document-register-element": "^1.7.2",
+    "g": "^2.0.1",
     "rxjs": "~6.6.0",
+    "serve": "^12.0.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

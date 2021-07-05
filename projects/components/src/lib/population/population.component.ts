@@ -9,6 +9,7 @@ import Person from './../interfaces/persone';
 })
 export class PopulationComponent implements OnInit {
   @Input() population: Person[] | undefined;
+  isOpen = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +17,6 @@ export class PopulationComponent implements OnInit {
   }
 
   openPersonData() {
-
+    this.isOpen = true;
   }
 }
