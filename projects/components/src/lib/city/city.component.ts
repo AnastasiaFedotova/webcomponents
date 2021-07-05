@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import City from './interfaces/city';
+import Person from '../interfaces/persone';
+import City from './../interfaces/city';
 
 @Component({
   selector: 'city-components',
@@ -9,13 +10,17 @@ import City from './interfaces/city';
 })
 export class CityComponent implements OnInit {
   @Input() cities: City[] | undefined;
+  population: Person[] | undefined;
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.cities)
   }
 
-  openPopulationList() {
+  openPopulationList(id: number) {
+    debugger
+    const city = this.cities?.find(elem => elem.id === id);
 
+    this.population = city?.population;
   }
 }

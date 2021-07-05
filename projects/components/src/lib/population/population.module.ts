@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CityComponent } from './city.component';
-
-
+import { PopulationComponent } from './population.component';
 
 @NgModule({
   declarations: [
-    CityComponent
+    PopulationComponent
   ],
   imports: [
     BrowserModule
   ],
   exports: [
-    CityComponent
+    PopulationComponent
   ]
 })
-export class CityModule { }
+export class PopulationModule { }
