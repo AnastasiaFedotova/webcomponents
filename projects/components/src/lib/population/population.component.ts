@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Person from './../interfaces/persone';
+import Person from '../interfaces/persone';
 
 @Component({
   selector: 'population-component',

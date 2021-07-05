@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { PersonComponent } from './person.component';
 
@@ -7,7 +8,8 @@ import { PersonComponent } from './person.component';
     PersonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   exports: [
     PersonComponent
