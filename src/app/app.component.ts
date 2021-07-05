@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   cities = [
     {
+      id: 1,
       name: 'Минск',
       population: [
         {
@@ -28,6 +29,7 @@ export class AppComponent {
       ]
     },
     {
+      id: 2,
       name: 'Чикаго',
       population: [
         {
@@ -48,6 +50,7 @@ export class AppComponent {
       ]
     },
     {
+      id: 3,
       name: 'Токио',
       population: [
         {
