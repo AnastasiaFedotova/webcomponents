@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ComponentsModule } from 'components';
-import { CityModule } from 'components';
+import { CityModule, PopulationModule, PersonModule } from 'components';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,9 @@ import { CityModule } from 'components';
   ],
   imports: [
     BrowserModule,
-    ComponentsModule,
-    CityModule
+    CityModule,
+    PopulationModule,
+    PersonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,3 @@
-<city-components [cities]="cities"></city-components>
+<city-component [cities]="cities"></city-component>
+<population-component [population]="cities[0].population"></population-component>
+<person-component [person]="cities[0].population[0]"></person-component>
