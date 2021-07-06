@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Person from 'projects/components/src/lib/interfaces/persone';
 
 @Component({
   selector: 'app-root',
@@ -80,6 +81,33 @@ export class AppComponent {
       ]
     }
   ]
+
+  isOpenPopulationList: boolean = false;
+  isOpenPersonData: boolean = false;
+  contentPopulationList: Person[] | undefined = undefined;
+  contentPersonForm: Person | undefined = undefined;
   constructor() {
+  }
+
+  openPopulationList(id: number) {
+    this.contentPopulationList = this.cities.find(city => city.id === id)?.population;
+    this.isOpenPopulationList = true;
+  }
+
+  openPersonData(id: number) {
+    this.contentPersonForm = this.contentPopulationList?.find(person => person.id === id);
+    this.isOpenPersonData = true;
+  }
+
+  addItem(event: number) {
+    console.log(event, typeof event)
+  }
+
+  updatePerson(newPerson: Person) {
+    if (this.contentPersonForm) {
+      this.contentPersonForm.age = newPerson.age;
+      this.contentPersonForm.firstname = newPerson.firstname;
+      this.contentPersonForm.lastname = newPerson.lastname;
+    }
   }
 }

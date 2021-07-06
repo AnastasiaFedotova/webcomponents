@@ -1,3 +1,5 @@
-<city-component [cities]="cities"></city-component>
-<population-component [population]="cities[0].population"></population-component>
-<person-component [person]="cities[0].population[0]"></person-component>
+<div>
+  <city-component [cities]="cities"(notifyCityId)="openPopulationList($event)"></city-component>
+  <population-component *ngIf="isOpenPopulationList" [population]="contentPopulationList" (notifyPopulationId)="openPersonData($event)"></population-component>
+  <person-component *ngIf="isOpenPersonData" [person]="contentPersonForm" (notifyPersonId)="updatePerson($event)"></person-component>
+</div>

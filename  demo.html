@@ -80,12 +80,15 @@
       ];
       let cityComponent = document.querySelector('city-component');
       cityComponent.cities = citiesData;
+      cityComponent.addEventListener('getCityId', (event) => console.log(event.detail));
 
       let populationComponent = document.querySelector('population-component');
       populationComponent.population = citiesData[0].population;
+      populationComponent.addEventListener('getPopulationId', (event) => console.log(event.detail));
 
       let personComponent = document.querySelector('person-component');
       personComponent.person = citiesData[0].population[0];
+      populationComponent.addEventListener('getPersonId', (event) => console.log(event.detail));
     </script>
 </body>
 </html>

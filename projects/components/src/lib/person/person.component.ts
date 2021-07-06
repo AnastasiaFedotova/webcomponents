@@ -10,7 +10,7 @@ import Person from '../interfaces/persone';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Person | undefined;
-  @Output() notifyPersonId = new EventEmitter<number>();
+  @Output() notifyPersonId = new EventEmitter<Person>();
   personForm: FormGroup;
   constructor() {
     this.personForm = new FormGroup({
@@ -25,6 +25,14 @@ export class PersonComponent implements OnInit {
   }
 
   updatePersonData() {
-    this.notifyPersonId.emit(this.person?.id)
+    if (this.person) {
+      const updatedPerson: Person = {
+        id: this.person.id,
+        firstname: this.personForm.controls.firstname.value,
+        lastname: this.personForm.controls.lastname.value,
+        age: this.personForm.controls.age.value
+      }
+      this.notifyPersonId.emit(updatedPerson)
+    }
   }
 }
