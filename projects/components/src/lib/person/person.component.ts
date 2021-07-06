@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Person from '../interfaces/persone';
 
@@ -10,6 +10,7 @@ import Person from '../interfaces/persone';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Person | undefined;
+  @Output() notifyPersonId = new EventEmitter<number>();
   personForm: FormGroup;
   constructor() {
     this.personForm = new FormGroup({
@@ -24,5 +25,6 @@ export class PersonComponent implements OnInit {
   }
 
   updatePersonData() {
+    this.notifyPersonId.emit(this.person?.id)
   }
 }

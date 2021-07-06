@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import City from './../interfaces/city';
 
 @Component({
@@ -9,6 +9,8 @@ import City from './../interfaces/city';
 })
 export class CityComponent implements OnInit {
   @Input() cities: City[] | undefined;
+  @Output() notifyCityId = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,8 +19,8 @@ export class CityComponent implements OnInit {
 
   openPopulationList(id: number) {
     const city = this.cities?.find(elem => elem.id === id);
+
+    this.notifyCityId.emit(id);
     console.log(city);
   }
-
-  openPersonData() {}
 }
