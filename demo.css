@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: Roboto;
+}
+
+.webcomponents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  color: #000000;
+  background-color: #F5F6FA;
+}
+
+.webcomponents__item {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.webcomponents__item_type_city {
+  margin-right: 87px;
+  min-width: 278px;
+  width: 278px;
+  height: 715px;
+}
+
+.webcomponents__item_type_population {
+  margin-right: 73px;
+  min-width: 638px;
+  width: 638px;
+  height: 715px;
+}
+
+.webcomponents__item_type_form {
+  position: relative;
+  min-width: 777px;
+  width: 777px;
+  height: 715px;
+}
+
+.city__title {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  font-size: 24px;
+  font-style: normal;
+  color: #000000;
+}
+
+.city__list,
+.population__list {
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.city__item-list,
+.population__item-list {
+  margin: 37px 0;
+  width: 100%;
+  height: 62px;
+  font-style: normal;
+  line-height: 55px;
+  background-color: #FDEFEF;
+  cursor: pointer;
+}
+
+.city__item-list .city__link:visited,
+.population__item-list .population__link:visited {
+  text-decoration: none;
+}
+
+.city__btn, .population__btn {
+  display: none;
+}
+
+input[type="radio"]:checked + .city__link,
+input[type="radio"]:checked + .population__link {
+  text-decoration: none;
+  background-color: #FFC5C5;
+}
+
+.city__link,
+.population__link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #FDEFEF;
+  cursor: pointer;
+}
+
+.population {
+  margin-TOP: 117px;
+}
+
+
+.person-form {
+  margin: 117px 94px 0 59px;
+}
+
+.person-form__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 37px;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.person-form__btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 206px;
+  height: 70px;
+  font-size: 24px;
+  background: #D3E0FF;
+  border: none;
+}
+
+.person-form__input {
+  width: 399px;
+  height: 62px;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  background-color: #FFEBEB;
+}
