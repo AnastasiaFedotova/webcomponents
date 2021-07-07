@@ -18,7 +18,7 @@ export class PopulationComponent implements OnInit {
 
   openPersonData(id: number): void {
     const person = this.population?.find(elem => elem.id === id);
-    this.notifyPopulationId.emit(id)
     console.log(person);
+    this.notifyPopulationId.emit(id);
   }
 }

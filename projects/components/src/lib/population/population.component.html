@@ -1,7 +1,10 @@
-<div>
-  <ul>
-    <li *ngFor="let person of population" (click)="openPersonData(person.id)">
-      {{person.firstname}} {{person.lastname}}
+<div class="population">
+  <ul class="population__list">
+    <li *ngFor="let person of population" class="population__item-list" (click)="openPersonData(person.id)">
+      <input class="population__btn" id="{{person.id}}" type="radio" name="population" value="person.lastname">
+      <label class="population__link" for="{{person.id}}">
+        {{person.firstname}} {{person.lastname}}
+      </label>
     </li>
   </ul>
 </div>

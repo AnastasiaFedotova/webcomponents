@@ -1,5 +1,5 @@
-<div>
-  <city-component [cities]="cities"(notifyCityId)="openPopulationList($event)"></city-component>
-  <population-component *ngIf="isOpenPopulationList" [population]="contentPopulationList" (notifyPopulationId)="openPersonData($event)"></population-component>
-  <person-component *ngIf="isOpenPersonData" [person]="contentPersonForm" (notifyPersonId)="updatePerson($event)"></person-component>
+<div class="webcomponents">
+  <city-component [cities]="cities" class="webcomponents__item webcomponents__item_type_city" (notifyCityId)="openPopulationList($event)"></city-component>
+  <population-component *ngIf="isOpenPopulationList" [population]="contentPopulationList" class="webcomponents__item webcomponents__item_type_population" (notifyPopulationId)="openPersonData($event)"></population-component>
+  <person-component *ngIf="isOpenPersonData" [person]="contentPersonForm" class="webcomponents__item webcomponents__item_type_form" (notifyPersonId)="updatePerson($event)"></person-component>
 </div>

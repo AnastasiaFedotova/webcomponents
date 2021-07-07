@@ -1,8 +1,23 @@
-<form *ngIf="person" [formGroup]="personForm" (submit)="updatePersonData()">
-  <input formControlName="firstname" placeholder={{person.firstname}} required name="firstname">
-  <input formControlName="lastname" placeholder={{person.lastname}} required name="lastname">
-  <input formControlName="age" placeholder={{person.age}} required name="age">
-  <button type="submit">
-    save
+<form *ngIf="person" class="person-form" [formGroup]="personForm" (submit)="updatePersonData()">
+  <div class="person-form__item">
+    <label class="person__subtitle">
+      Имя:
+    </label>
+    <input class="person-form__input" formControlName="firstname" placeholder={{person.firstname}} required name="firstname">
+  </div>
+  <div class="person-form__item">
+    <label class="person__subtitle">
+      Фамилия:
+    </label>
+    <input class="person-form__input" formControlName="lastname" placeholder={{person.lastname}} required name="lastname">
+  </div>
+  <div class="person-form__item">
+    <label class="person__subtitle">
+      Возраст:
+    </label>
+    <input class="person-form__input" formControlName="age" placeholder={{person.age}} required name="age">
+  </div>
+  <button class="person-form__btn" type="submit">
+    Save
   </button>
 </form>

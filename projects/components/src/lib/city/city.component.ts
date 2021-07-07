@@ -5,6 +5,7 @@ import City from './../interfaces/city';
   selector: 'city-component',
   templateUrl: './city.component.html',
   styles: [
+    './city.component.css'
   ]
 })
 export class CityComponent implements OnInit {

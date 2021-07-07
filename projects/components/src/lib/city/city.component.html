@@ -1,6 +1,11 @@
-<div>
- <h1>Города:</h1>
-  <ul>
-    <li *ngFor="let city of cities" (click)="openPopulationList(city.id)">{{city.name}}</li>
+<div class="city">
+  <h1 class="city__title">Города:</h1>
+  <ul class="city__list">
+    <li *ngFor="let city of cities" class="city__item-list" (click)="openPopulationList(city.id)">
+      <input class="city__btn" id="{{city.id}}" type="radio" name="cities" value="city.name">
+      <label class="city__link" for="{{city.id}}">
+        {{city.name}}
+      </label>
+    </li>
   </ul>
 </div>

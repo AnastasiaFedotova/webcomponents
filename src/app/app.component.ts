@@ -92,6 +92,7 @@ export class AppComponent {
   openPopulationList(id: number) {
     this.contentPopulationList = this.cities.find(city => city.id === id)?.population;
     this.isOpenPopulationList = true;
+    this.isOpenPersonData = false;
   }
 
   openPersonData(id: number) {
@@ -99,15 +100,13 @@ export class AppComponent {
     this.isOpenPersonData = true;
   }
 
-  addItem(event: number) {
-    console.log(event, typeof event)
-  }
-
   updatePerson(newPerson: Person) {
     if (this.contentPersonForm) {
       this.contentPersonForm.age = newPerson.age;
       this.contentPersonForm.firstname = newPerson.firstname;
       this.contentPersonForm.lastname = newPerson.lastname;
+
+      this.isOpenPersonData = false;
     }
   }
 }
