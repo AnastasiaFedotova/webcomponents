@@ -125,7 +125,11 @@ class City {
           elem.lastname = newPerson.lastname;
           elem.age = newPerson.age;
         }
-      })
+      });
+
+      this.personComponent.querySelector('input[name=firstname]').setAttribute('placeholder', newPerson.firstname);
+      this.personComponent.querySelector('input[name=lastname]').setAttribute('placeholder', newPerson.lastname);
+      this.personComponent.querySelector('input[name=age]').setAttribute('placeholder', newPerson.age);
 
       const label = this.populationComponent.querySelector('input[type="radio"]:checked + .population__link');
       label.innerHTML = `${newPerson.firstname} ${newPerson.lastname}`;
