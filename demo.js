@@ -113,10 +113,11 @@ class City {
 
   closePersonData() {
     this.personComponent.style.visibility = 'hidden';
+
+    this.personComponent.querySelector('form').reset();
   }
 
   updatePerson(newPerson) {
-    debugger
     if (this.contentPersonForm) {
       this.contentPopulationList.find(elem => {
         if (elem.id === newPerson.id) {
