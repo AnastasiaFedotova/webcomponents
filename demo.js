@@ -126,7 +126,8 @@ class City {
         }
       })
 
-      this.populationComponent.population = this.contentPopulationList;
+      const label = this.populationComponent.querySelector('input[type="radio"]:checked + .population__link');
+      label.innerHTML = `${newPerson.firstname} ${newPerson.lastname}`;
     }
     this.closePersonData();
   }
