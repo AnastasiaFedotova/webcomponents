@@ -73,18 +73,18 @@ let citiesData = [
   }
 ];
 
-class City {
+class Cities {
   constructor() {
-    this.contentPopulationList = undefined;
-    this.contentPersonForm = undefined;
+    this.contentPopulationList = null;
+    this.contentPersonForm = null;
     this.cityComponent = document.querySelector('city-component');
     this.populationComponent = document.querySelector('population-component');
     this.personComponent = document.querySelector('person-component');
 
-    this.initial();
+    this.init();
   }
 
-  initial() {
+  init() {
     this.cityComponent.cities = citiesData;
     this.populationComponent.population = citiesData[0].population;
     this.personComponent.person = citiesData[0].population[0];
@@ -124,18 +124,19 @@ class City {
           elem.firstname = newPerson.firstname;
           elem.lastname = newPerson.lastname;
           elem.age = newPerson.age;
+
+          return true;
         }
       });
 
-      this.personComponent.querySelector('input[name=firstname]').setAttribute('placeholder', newPerson.firstname);
-      this.personComponent.querySelector('input[name=lastname]').setAttribute('placeholder', newPerson.lastname);
-      this.personComponent.querySelector('input[name=age]').setAttribute('placeholder', newPerson.age);
-
-      const label = this.populationComponent.querySelector('input[type="radio"]:checked + .population__link');
-      label.innerHTML = `${newPerson.firstname} ${newPerson.lastname}`;
+      this.personComponent.querySelector('input[name=firstname]').selectedTokenType = newPerson.firstname;
+      this.personComponent.querySelector('input[name=lastname]').selectedTokenType = newPerson.lastname;
+      this.personComponent.querySelector('input[name=age]').selectedTokenType = newPerson.age;
+      this.populationComponent.querySelector('input[type="radio"]:checked + .population__link').selectedTokenType = `${newPerson.firstname} ${newPerson.lastname}`;
     }
+
     this.closePersonData();
   }
 }
 
-new City();
+new Cities();
